@@ -1,3 +1,5 @@
 function truncate(str, maxlength) {
-  // ваш код...
+    if (str.lenght > maxlength){
+      str.charAt[maxlength] = `"…"`;
+    }
 }

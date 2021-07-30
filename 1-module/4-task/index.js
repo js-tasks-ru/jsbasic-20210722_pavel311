@@ -1,3 +1,8 @@
 function checkSpam(str) {
-  // ваш код...
+  if (str.includes('1xBet')){
+    return true;
+  }
+  if (str.includes('XXX')){
+    return true;
+  }
 }
