@@ -7,4 +7,4 @@ function factorial(num) {
   return num;
 }
 
-console.log(fractorial(5));
+console.log(factorial(5));

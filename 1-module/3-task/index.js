@@ -1,7 +1,5 @@
 function ucFirst(str) {
   let zeroSymbol = str[0];
-  zeroSymbol.toUpperCase();
-  if (zeroSymbol.equals(null)){
-    return;
+  return str.charAt(0).toUpperCase() + str.slice(1);
   }
-}
+
