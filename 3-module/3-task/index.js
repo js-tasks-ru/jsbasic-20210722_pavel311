@@ -1,4 +1,3 @@
-function camelize(str) {
   function camelize(str) {
     return str
     .split('-')
@@ -7,4 +6,5 @@ function camelize(str) {
     )
     .join('');
   
-  }}
+  }
+
