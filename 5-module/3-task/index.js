@@ -16,8 +16,7 @@ nextButton.addEventListener('click', () => {
   if (currentSlide < 3) { 
     currentSlide++;
 }
-//console.log(currentSlide); логирование  
-
+сheckButtons();
 });
 
 prevButton.addEventListener('click', () => {
@@ -25,21 +24,33 @@ prevButton.addEventListener('click', () => {
   setTransition();
   if (currentSlide > 0) { 
     currentSlide--; 
-  //console.log(currentSlide); логирование  
 }
+сheckButtons();
 });
 
  setTransition = () => {
   inner.style.transform = `translateX(${transition}px)`;
 };
 
-сheckButtons = () => {
+const сheckButtons = () => {
   if(currentSlide === 0){
     prevButton.style.display = 'none';
+    console.log('aaaa');   
   }
-  else if(currentSlide === 3){
+  if(currentSlide != 0){
+    prevButton.style.display = '';
+      console.log(currentSlide);   
+  }
+  if(currentSlide === 3){
     nextButton.style.display = 'none';
+    console.log('cccc');   
+
   }
+  if(currentSlide != 3){
+    nextButton.style.display = '';
+    console.log(currentSlide);   
+  }
+
 };
 сheckButtons();
 }
