@@ -14,5 +14,8 @@
  */
 export default class UserTable {
   constructor(rows) {
+    for (let i = 0; i < rows.length; i++){
+      
+    }
   }
 }

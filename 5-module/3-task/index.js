@@ -35,22 +35,17 @@ prevButton.addEventListener('click', () => {
 const сheckButtons = () => {
   if(currentSlide === 0){
     prevButton.style.display = 'none';
-    console.log('aaaa');   
   }
   if(currentSlide != 0){
     prevButton.style.display = '';
-      console.log(currentSlide);   
   }
   if(currentSlide === 3){
     nextButton.style.display = 'none';
-    console.log('cccc');   
 
   }
   if(currentSlide != 3){
     nextButton.style.display = '';
-    console.log(currentSlide);   
   }
-
 };
 сheckButtons();
 }
