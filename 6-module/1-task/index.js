@@ -14,8 +14,19 @@
  */
 export default class UserTable {
   constructor(rows) {
-    for (let i = 0; i < rows.length; i++){
-      
-    }
+    this.rows = rows;
+    this.elem = document.querySelector('table');
+    this.removeLine();
   }
+     removeLine(){
+      const buttons = this.elem.querySelectorAll('button');
+      for (let button of buttons){
+        button.addEventListener('click', () => {
+          event.target.closest('tr').remove();
+        });
+      }
+  }
+      createRows(){
+        
+      }
 }
