@@ -72,10 +72,10 @@ export default class RibbonMenu {
   selectCategory(){
     let itemsList = this.elem.querySelectorAll('.ribbon__item');
     for (let item of itemsList){
-      item.addEventListener('click', () => {
+      item.addEventListener('click', (event) => {
         event.preventDefault();
-        this.elem.querySelector('.ribbon__item_active').classList.remove('.ribbon__item_active');
-        item.classList.add('.ribbon__item_active');
+        this.elem.querySelector('.ribbon__item_active').classList.remove('ribbon__item_active');
+        item.classList.add('ribbon__item_active');
         let ribbonSelect = new CustomEvent('ribbon-select', {
           detail: item.dataset.id,
           bubbles: true
