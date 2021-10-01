@@ -3,7 +3,6 @@ import createElement from '../../assets/lib/create-element.js';
 export default class Modal {
   constructor() {
     this.elem = createElement(`
-   
       <!--Корневой элемент Modal-->
       <div class="modal">
         <!--Прозрачная подложка перекрывающая интерфейс-->
