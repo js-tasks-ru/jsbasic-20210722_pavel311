@@ -11,7 +11,7 @@ export default class RibbonMenu {
   render(){
     this.elem = createElement(`
     <div class="ribbon">
-      <button class="ribbon__arrow ribbon__arrow_left ribbon__arrow_visible">
+      <button class="ribbon__arrow ribbon__arrow_left">
         <img src="/assets/images/icons/angle-icon.svg" alt="icon">
       </button>
       <button class="ribbon__arrow ribbon__arrow_right ribbon__arrow_visible">
@@ -33,40 +33,29 @@ export default class RibbonMenu {
     const ribbonInner = this.elem.querySelector('.ribbon__inner');
     const leftArrow = this.elem.querySelector('.ribbon__arrow_left');
     const rightArrow = this.elem.querySelector('.ribbon__arrow_right');
-
     leftArrow.addEventListener('click', () => {
       ribbonInner.scrollBy(-350, 0);
-      checkButtons();
     });
-
     rightArrow.addEventListener('click', () => {
       ribbonInner.scrollBy(350, 0);
-      checkButtons();
     });
-
     const checkButtons = () => {
       let scrollLeft = ribbonInner.scrollLeft;
       let scrollWidth = ribbonInner.scrollWidth;
       let clientWidth = ribbonInner.clientWidth;
-
       let scrollRight = scrollWidth - scrollLeft - clientWidth;
-
-
-      ribbonInner.addEventListener('scroll', () => {
-        if (scrollLeft < 1){
-          leftArrow.classList.remove('ribbon__arrow_visible');
-        }
-        else {
-          leftArrow.classList.add('ribbon__arrow_visible');
-        }
-        if (scrollRight < 1){
-          rightArrow.classList.remove('ribbon__arrow_visible');
-        }
-        else {
-          rightArrow.classList.add('ribbon__arrow_visible');
-        }
-      });
+      if (scrollLeft < 1){
+        leftArrow.classList.remove('ribbon__arrow_visible');
+      } else {
+        leftArrow.classList.add('ribbon__arrow_visible');
+      }
+      if (scrollRight < 1){
+        rightArrow.classList.remove('ribbon__arrow_visible');
+      } else {
+        rightArrow.classList.add('ribbon__arrow_visible');
+      }
     };
+    ribbonInner.addEventListener('scroll',checkButtons)
   }
 
   selectCategory(){
