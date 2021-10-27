@@ -6,7 +6,6 @@ export default class ProductGrid {
     this.products = products;
     this.filters = {};
     this.render();
-    this.updateFilter();
   }
   render() {
     this.elem = createElement(
